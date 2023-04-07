@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        {{ template "content" . }}
+    </div>
+
+    <footer>
+        <p>&copy; {{ .Year }} - Job Scheduler</p>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{{ define "content" }}
+    <h2>Job list</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Function name</th>
+                <th>Scheduled at</th>
+                <th>Timeout (seconds)</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range $job := .jobs }}
+                <tr>
+                    <td>{{ $job.ID }}</td>
+                    <td>{{ $job.Func }}</td>
+                    <td>{{ $job.ScheduledAt }}</td>
+                    <td>{{ $job.Timeout.Seconds }}</td>
+                    <td>{{ index $.jobStatus $job.ID }}</td>
+                    <td><a href="/status/{{ $job.ID }}">View status</a> | <a href="/cancel/{{ $job.ID }}">Cancel</a></td>
+                </tr>
+            {{ end }}
+        </tbody>
+    </table>
+{{ end }}

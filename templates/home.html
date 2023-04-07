@@ -1,0 +1,20 @@
+{{ define "content" }}
+    <h2>Schedule a job</h2>
+    <form action="/schedule" method="post">
+        <div>
+            <label for="func">Function name:</label>
+            <input type="text" name="func" id="func" required>
+        </div>
+        <div>
+            <label for="timeout">Timeout (seconds):</label>
+            <input type="number" name="timeout" id="timeout" required>
+        </div>
+        <div>
+            <label for="time">Scheduled time:</label>
+            <input type="datetime-local" name="time" id="time" required>
+        </div>
+        <div>
+            <button type="submit">Schedule job</button>
+        </div>
+    </form>
+{{ end }}

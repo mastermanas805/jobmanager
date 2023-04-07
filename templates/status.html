@@ -1,0 +1,7 @@
+{{ define "content" }}
+    <h2>Job status</h2>
+    <p><strong>ID:</strong> {{ .status.ID }}</p>
+    <p><strong>Status:</strong> {{ .status.Status }}</p>
+    <p><strong>Error:</strong> {{ .status.Error }}</p>
+    <p><a href="/jobs">Back to job list</a></p>
+{{ end }}
