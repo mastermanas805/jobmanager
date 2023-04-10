@@ -1,20 +1,23 @@
 {{ define "content" }}
     <h2>Schedule a job</h2>
-    <form action="/schedule" method="post">
-        <div>
-            <label for="func">Function name:</label>
-            <input type="text" name="func" id="func" required>
+    <form action="/schedule" method="POST">
+        <div class="form-group">
+            <label for="func">Function:</label>
+            <select id="func" name="func">
+                <option value="hello_world">Hello World</option>
+                <option value="panic">Panic</option>
+                <option value="infinite_loop">Infinite Loop</option>
+              </select>  
         </div>
-        <div>
-            <label for="timeout">Timeout (seconds):</label>
-            <input type="number" name="timeout" id="timeout" required>
+        <div class="form-group">
+            <label for="timeout">Timeout (in seconds):</label>
+            <input type="number" id="timeout" name="timeout" class="form-control" min="1" max="3600" required>
         </div>
-        <div>
-            <label for="time">Scheduled time:</label>
-            <input type="datetime-local" name="time" id="time" required>
+        <div class="form-group">
+            <label for="time">Scheduled Time:</label>
+            <input type="datetime-local" id="time" name="time" class="form-control" required>
         </div>
-        <div>
-            <button type="submit">Schedule job</button>
-        </div>
+        <button type="submit" class="btn btn-primary">Schedule Job</button>
     </form>
+
 {{ end }}
